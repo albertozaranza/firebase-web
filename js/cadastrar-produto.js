@@ -2,6 +2,11 @@ var nomeInput = document.getElementById('nomeInput');
 var valorInput = document.getElementById('valorInput');
 var addButton = document.getElementById('addButton');
 var produtosList = document.getElementById('produtosList');
+var voltarButton = document.getElementById('voltarButton');
+
+voltarButton.addEventListener('click', function (){
+    window.location.href = "homepage.html";
+})
 
 addButton.addEventListener('click', function () {
     create(nomeInput.value, valorInput.value);
@@ -13,10 +18,10 @@ function create(nome, valor) {
         valor: valor
     };
 
-    return firebase.database().ref().child('node').push(produto);
+    return firebase.database().ref().child('produtos').push(produto);
 }
 
-firebase.database().ref('node').on('value', function (snapshot) {
+firebase.database().ref('produtos').on('value', function (snapshot) {
     produtosList.innerHTML = '';
     snapshot.forEach(function (item) {
         var li = document.createElement('li');
