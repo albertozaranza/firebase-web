@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8" />
-    <title>Firebase</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Pagina inicial</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
-
+    
     <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
         <span class="navbar-brand mb-0 h1">Navbar</span>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target">
@@ -18,8 +18,8 @@
         </button>
         <div class="collapse navbar-collapse" id="nav-target">
             <ul class="navbar-nav ml-auto">
-                <li class="navbar-item" id="pagina-inicial">
-                    <a href="#" class="nav-link">Pagina inicial</a>
+                <li class="navbar-item" id="cadastrar">
+                    <a href="#" class="nav-link">Cadastrar produto</a>
                 </li>
                 <li class="navbar-item" id="sair">
                     <a href="#" class="nav-link">Sair</a>
@@ -27,26 +27,7 @@
             </ul>
         </div>
     </nav>
-
-    <h1>Cadastrar produto</h1>
-
-    <ul id="produtosList"></ul>
-    <hr>
-
-    <div class="col-md-4">
-        <form>
-            <div class="form-group">
-                <label for="nomeInput">Nome</label>
-                <input type="text" class="form-control" id="nomeInput" placeholder="Nome">
-            </div>
-            <div class="form-group">
-                <label for="valorInput">Valor</label>
-                <input type="number" class="form-control" id="valorInput" placeholder="Valor">
-            </div>
-            <button class="btn btn-lg btn-block btn-primary" id="addButton">Adicionar</button>
-        </form>
-    </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -54,8 +35,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/cadastrar-produto.js"></script>
-
+    <script src="js/pagina-inicial.js"></script>
 </body>
 
 </html>

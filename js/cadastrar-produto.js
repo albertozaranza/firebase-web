@@ -1,11 +1,14 @@
+autenticarUsuario();
+
 var nomeInput = document.getElementById('nomeInput');
 var valorInput = document.getElementById('valorInput');
 var addButton = document.getElementById('addButton');
 var produtosList = document.getElementById('produtosList');
-var voltarButton = document.getElementById('voltarButton');
+var paginaInicial = document.getElementById('pagina-inicial');
+var sair = document.getElementById('sair');
 
-voltarButton.addEventListener('click', function (){
-    window.location.href = "homepage.html";
+paginaInicial.addEventListener('click', function (){
+    window.location.href = "pagina-inicial.html";
 })
 
 addButton.addEventListener('click', function () {
@@ -29,3 +32,21 @@ firebase.database().ref('produtos').on('value', function (snapshot) {
         produtosList.appendChild(li);
     });
 });
+
+sair.addEventListener('click', function (){
+    firebase
+        .auth()
+        .signOut()
+        .then(autenticarUsuario ()
+        , function (error) {
+            console.error(error);
+    });
+});
+
+function autenticarUsuario(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+            window.location.href = "index.html";
+        }
+      });
+}

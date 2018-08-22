@@ -12,7 +12,7 @@ loginButton.addEventListener('click', function () {
         .auth()
         .signInWithEmailAndPassword(emailInput.value, senhaInput.value)
         .then(function () {
-            window.location.href = "homepage.html";
+            window.location.href = "pagina-inicial.html";
         })
         .catch(function (error) {
             console.error(error.code);
